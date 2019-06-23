@@ -1,0 +1,33 @@
+<section id="profile">
+    <div class="container">
+        <div class="card mycustomized_card" style="width: 18rem;">
+            <% if @posts.user.avatar.url%>
+                <div class="avatar_wrapper">
+                   <img src="<%=@posts.user.avatar.url%>" alt="dog">
+                </div>   
+           <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%=@posts.user.email%></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">게시물 갯수 : <%=@posts.user.posts.count%></li>
+            <% if current_user.followings.include?(@posts.user)%>
+            <li class="list-group-item"><a href="/home/profile_posts/<%=@posts.user.id%>">쓴 글 보러가기</a></li>
+            <% end %>
+            <li class="list-group-item">
+                팔로잉 : <%=@posts.user.followings.count%>
+                팔로우 : <%=@posts.user.followers.count%>
+                </li>
+          </ul>
+          <% if current_user.id != @posts.user.id %>
+              <div class="card-body">
+                   <% if current_user.followings.include?(@posts.user) %>
+                       <a class="card-link" href="/follow/destroy/<%=@posts.user.id%>">팔로우 취소</a>
+                   <% else %>
+                       <a class="card-link" href="/follow/create/<%=@posts.user.id%>">팔로우</a>
+                   <% end %>
+              </div>       
+          <% end %>
+    </div>
+</section>

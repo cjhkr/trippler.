@@ -1,0 +1,13 @@
+<h1>수정하기</h1> 
+   
+   <section id="new">
+        <div class="container">
+            <form action="/home/update/<%=@post.id%>" method="POST">
+                <input value="<%=@post.title%>" class="title_input form-control" type="text" placeholder="Enter the title..." name="title">
+                <div class="content_box">
+                    <textarea class="form-control" type="text" cols="150" rows="15" name="content"><%=@post.content%></textarea>
+                </div>
+                <button type="submit" class="button_2">Update</button>
+            </form>
+        </div>
+    </section>

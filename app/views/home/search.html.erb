@@ -1,0 +1,41 @@
+<section id="new">
+        <div class="container">
+          <%=flash[:alert]%>
+          <% @search.each do |p| %>
+            <form>
+                <input class="title_input form-control" type="text" placeholder="Enter the title..." name="title" value="<%=p.title%>">
+                <div class="content_box">
+                    <textarea class="form-control" type="text" cols="150" rows="15" name="content"><%=p.content%></textarea>
+                <div class="like_wrapper">
+                    <p>좋아하는 사람들 수 : <%=p.likes.count%></p>
+                    <% if current_user.is_like?(p) %>
+                        <a href="/likes/toggle/<%=p.id%>">좋아요 취소</a>
+                    <% else %>
+                        <a href="/likes/toggle/<%=p.id%>">좋아요</a>
+                    <% end %>
+                </div>    
+                    
+                </div>
+                    <% if current_user.id == p.user.id %>    
+                        <button class="button_3 right" ><a href="/home/edit/<%=p.id%>">Edit</a></button>
+                        <button class="button_4 right"><a href="/home/destroy/<%=p.id%>">Destroy</a></button>
+                    <% end %>
+                    
+                  <textarea class="form-control" cols="150" rows="3">
+                    <% p.comments.each do |c|%>
+                   <%=c.user.email%>님의 댓글 : <%=c.content%>
+                    <% end %> 
+                  </textarea>
+             </div>
+            </form>    
+            
+             
+                    <div class="input-field col s12">
+                        <form action="/home/comment_create/<%=p.id%>" method="POST">
+                            <textarea id="textarea2" class="materialize-textarea" data-length="120" name="content"></textarea>
+                            <input type="submit" value="댓글작성">
+                        </form>
+                    </div>
+               <% end %>
+        </div>
+    </section>

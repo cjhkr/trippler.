@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+
+
+     <header>
+        <div class="container">
+            <div id="branding">
+                <p><a href="/home/index">Trippler</a></p>
+            </div>
+            <div class="nav">
+                <ul>
+                    <% if user_signed_in? %>
+                      <li><a href="/home/index"><span>Home</span></a></li>
+                      <li><a href=""><%=current_user.email%></a></li>
+                      <li><a href="/home/new">Get Started</a></li>
+                      <li><a href="/home/all_post">posts</a></li>
+                      <li><%=link_to 'Sign Out', destroy_user_session_path, method:"DELETE"%></li>
+                    <%else%>
+                      <li><a href="/users/sign_up">Sign Up</a></li>
+                      <li><a href="/users/sign_in">Sign In</a></li>
+                    <%end%>
+                </ul>
+            </div>
+        </div>
+    </header>  
+
+
+  
+
+<%= yield %>
+
+  <footer>
+        <p>copyright Acme &copy; 2019</p>
+    </footer>
+    
+</body>
+</html>

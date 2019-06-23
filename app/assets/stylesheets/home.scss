@@ -1,0 +1,243 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+  font:15px/1.5;
+  margin:0;
+  padding:0;
+
+}
+
+/* gobal */
+.container{
+    margin:auto;
+    padding:0;
+    width:80%;
+}
+
+/* header */
+header{
+    background-color:#35424a;
+    min-height:80px;
+    border-bottom:3px solid #e8491d;
+}
+
+#branding{
+    margin-top:17px;
+    display:inline-block;
+    p{
+        color:#ffffff;
+        font-size:30px;
+        font-weight:bold;
+        a{
+            color:#ffffff;}
+            
+    }
+}
+
+.nav{
+    height:50px;
+    display:inline;
+    margin-top:17px;
+    padding:0;
+    float:right;
+    ul{
+        float:right;
+        list-style-type: none;
+        li{
+            float:left;
+            margin-left:20px;
+            a{
+                color:#ffffff;
+                font-weight:bold;
+                text-decoration:none;
+                font-size:15px;
+                text-transform:uppercase;
+                span{
+                    color:#e8491d;
+                }
+            }
+        }
+        
+    }
+}
+
+header a:hover{
+    color:#ffffff;
+    font-weight:bold;
+}
+
+/* showcase */
+#showcase{
+    background-image:url("../assets/image3.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:500px;
+    
+}
+
+#showcase h1{
+    margin-top:120px;
+    text-align:center;
+    font-weight:bold;
+}
+#showcase p{
+    margin-top:10px;
+    text-align:center;
+    font-weight:bold;
+}
+
+#showcase form{
+    margin:15px auto;
+    padding:0;
+    text-align:center;
+}
+
+#showcase input[type="text"]{
+    margin:auto;
+    width:300px;
+    height:30px;
+}
+
+#showcase .button_1{
+    height:30px;
+    font-weight:bold;
+    color:#ffffff;
+    background-color:#6e6e6e;
+    border:none;
+}
+
+
+/* boxes */
+
+#boxes{
+    margin:15px auto;
+    text-align:center;
+    .box{
+      height:293px;
+      float:left;
+      width:30%;
+      margin-left:20px;
+      border:2px solid #6e6e6e;
+      img{
+          width:100%;
+          height:180px;
+          
+      }
+      
+      h2{
+          margin-top:10px;
+        
+          a{
+              color:black;
+          }
+          a:hover{
+              color:black;
+              font-weight:bold;
+          }
+          
+      }
+      h5{
+          font-weight:bold;
+      }
+      
+    }
+}
+
+
+footer{
+    background-color:#e8491d;
+    text-align:center;
+    margin-top:20px;
+    padding-top:20px;
+    height:50px;
+    font-weight:bold;
+    color:#ffffff;
+}
+
+/* new */
+
+#new{
+
+    margin: 20px auto 20px auto;
+    padding:10px;
+    width:80%;
+  
+}
+
+.title_input{
+    margin-bottom:10px;
+}
+.content_box{
+    margin-bottom:10px;
+}
+.button_2{
+    position:right;
+    background-color:#6e6e6e;
+    font-weight:bold;
+    border:none;
+    color:#ffffff;
+    width:70px;
+    height:30px;
+}
+
+/*posts*/
+.like_wrapper{
+    background-color:#99ccff;
+    width:100%;
+    min-height:30px;
+    p{
+        font-weight:bold;
+        display:inline;
+        padding:2px;
+    }
+    a{
+        color:#ffffff;
+        font-weight:bold;
+        margin-left:4px;
+    }
+}
+
+.like_wrapper a:hover{
+    color:#ffffff;
+    font-weight:bold;
+}
+
+.thumb {
+    font-weight:bold;
+    color:black;
+}
+
+.thumbwrapper a:hover{
+    font-weight:bold;
+    text-decoration:none;
+    color:#6e6e6e;
+}
+
+
+.thumb_avatar{
+    border-radius:30%;
+}
+
+.avatar_wrapper{
+    height:120px;
+    width:270px;
+    padding:0;
+    text-align:center;
+        
+    
+    img{
+        width:97%;
+        height:100%;
+        border-radius:.25rem;
+      
+    }
+}
+
+.mycustomized_card{
+    padding:0;
+    display:inline;
+}

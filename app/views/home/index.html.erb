@@ -1,0 +1,39 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="home.scss">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <title>Acme Web Design | Welcome</title>
+</head>
+<body>
+
+  
+    <section id="showcase">
+        <div class="container">
+            <h1>Trip To Thailand, Backpacker!</h1>
+            <p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,<br> from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+            <form action="/home/search" method="get">
+                <input type="text" placeholder="Search..." name="search">
+                <button class="button_1" type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+    <section id="boxes">
+        <div class="container">
+            <% @posts.each do |p| %>
+            <div class="box">
+                <% if p.image.url %>
+                <img src="<%=p.image.url%>">
+                <% end %>
+                <h2><a href="/home/posts/<%=p.id%>"><%=p.title%></a></h2>
+                        <hr>
+                <h5><%= truncate p.content, length: 30 %><%=link_to 'read more', home_create_path(p.id) %></h5>
+            </div>
+            <% end %>
+            
+            <%= will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: "Older", next_label: "Newer", inner_window:1, outer_window:2 %>
+        </div>
+    </section>
+
+    
+    
+</body>
